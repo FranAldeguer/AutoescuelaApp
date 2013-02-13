@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B48172B16C5509800D3AF2E /* PracticasTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B48172A16C5509800D3AF2E /* PracticasTabBarController.m */; };
+		4B48173416C553E000D3AF2E /* volante.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B48173216C553E000D3AF2E /* volante.png */; };
+		4B48173816C555FB00D3AF2E /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B48173716C555FB00D3AF2E /* tick.png */; };
+		4B48174416C563A900D3AF2E /* L.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B48174316C563A900D3AF2E /* L.png */; };
+		4B48174616C569E600D3AF2E /* darma.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B48174516C569E600D3AF2E /* darma.png */; };
 		4B4F48D016C3B2F5005440B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B4F48CF16C3B2F5005440B0 /* UIKit.framework */; };
 		4B4F48D216C3B2F5005440B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B4F48D116C3B2F5005440B0 /* Foundation.framework */; };
 		4B4F48D416C3B2F5005440B0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B4F48D316C3B2F5005440B0 /* CoreGraphics.framework */; };
@@ -18,9 +23,22 @@
 		4B4F48E616C3B2F5005440B0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B4F48E516C3B2F5005440B0 /* Default-568h@2x.png */; };
 		4B4F48E916C3B2F5005440B0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4F48E716C3B2F5005440B0 /* MainStoryboard.storyboard */; };
 		4B4F48EC16C3B2F5005440B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4F48EB16C3B2F5005440B0 /* ViewController.m */; };
+		4B99FAF516CA7319005A13D6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B99FAF416CA7319005A13D6 /* libsqlite3.dylib */; };
+		4B99FAF916CABFAA005A13D6 /* Alumno.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B99FAF816CABFAA005A13D6 /* Alumno.m */; };
+		4B99FB0016CB9E7C005A13D6 /* alum_carnet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B99FAFF16CB9E7C005A13D6 /* alum_carnet.m */; };
+		4B99FB0316CBE33C005A13D6 /* ListaColeccionSinHacerTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B99FB0216CBE33C005A13D6 /* ListaColeccionSinHacerTVC.m */; };
+		4B99FB0E16CBFD2C005A13D6 /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B99FB0D16CBFD2C005A13D6 /* DetailVC.m */; };
+		4BB3FF0B16C968AA0060C18A /* Coleccion.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB3FF0A16C968AA0060C18A /* Coleccion.m */; };
+		4BB3FF4816CA6ADB0060C18A /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB3FF4716CA6ADB0060C18A /* Logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B48172916C5509800D3AF2E /* PracticasTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticasTabBarController.h; sourceTree = "<group>"; };
+		4B48172A16C5509800D3AF2E /* PracticasTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticasTabBarController.m; sourceTree = "<group>"; };
+		4B48173216C553E000D3AF2E /* volante.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volante.png; sourceTree = "<group>"; };
+		4B48173716C555FB00D3AF2E /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
+		4B48174316C563A900D3AF2E /* L.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = L.png; sourceTree = "<group>"; };
+		4B48174516C569E600D3AF2E /* darma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = darma.png; sourceTree = "<group>"; };
 		4B4F48CB16C3B2F4005440B0 /* PruebaLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PruebaLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4F48CF16C3B2F5005440B0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4B4F48D116C3B2F5005440B0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -37,6 +55,18 @@
 		4B4F48E816C3B2F5005440B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4B4F48EA16C3B2F5005440B0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4B4F48EB16C3B2F5005440B0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4B99FAF416CA7319005A13D6 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		4B99FAF716CABFAA005A13D6 /* Alumno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alumno.h; sourceTree = "<group>"; };
+		4B99FAF816CABFAA005A13D6 /* Alumno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alumno.m; sourceTree = "<group>"; };
+		4B99FAFE16CB9E7C005A13D6 /* alum_carnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alum_carnet.h; sourceTree = "<group>"; };
+		4B99FAFF16CB9E7C005A13D6 /* alum_carnet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = alum_carnet.m; sourceTree = "<group>"; };
+		4B99FB0116CBE33C005A13D6 /* ListaColeccionSinHacerTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaColeccionSinHacerTVC.h; sourceTree = "<group>"; };
+		4B99FB0216CBE33C005A13D6 /* ListaColeccionSinHacerTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaColeccionSinHacerTVC.m; sourceTree = "<group>"; };
+		4B99FB0C16CBFD2C005A13D6 /* DetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailVC.h; sourceTree = "<group>"; };
+		4B99FB0D16CBFD2C005A13D6 /* DetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailVC.m; sourceTree = "<group>"; };
+		4BB3FF0916C968AA0060C18A /* Coleccion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coleccion.h; path = ../Coleccion.h; sourceTree = "<group>"; };
+		4BB3FF0A16C968AA0060C18A /* Coleccion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Coleccion.m; path = ../Coleccion.m; sourceTree = "<group>"; };
+		4BB3FF4716CA6ADB0060C18A /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B99FAF516CA7319005A13D6 /* libsqlite3.dylib in Frameworks */,
 				4B4F48D016C3B2F5005440B0 /* UIKit.framework in Frameworks */,
 				4B4F48D216C3B2F5005440B0 /* Foundation.framework in Frameworks */,
 				4B4F48D416C3B2F5005440B0 /* CoreGraphics.framework in Frameworks */,
@@ -53,6 +84,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B48174216C55F6400D3AF2E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				4BB3FF4716CA6ADB0060C18A /* Logo.png */,
+				4B48174316C563A900D3AF2E /* L.png */,
+				4B48174516C569E600D3AF2E /* darma.png */,
+				4B48173216C553E000D3AF2E /* volante.png */,
+				4B48173716C555FB00D3AF2E /* tick.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		4B4F48C016C3B2F4005440B0 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +119,7 @@
 				4B4F48CF16C3B2F5005440B0 /* UIKit.framework */,
 				4B4F48D116C3B2F5005440B0 /* Foundation.framework */,
 				4B4F48D316C3B2F5005440B0 /* CoreGraphics.framework */,
+				4B99FAF416CA7319005A13D6 /* libsqlite3.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -86,8 +130,21 @@
 				4B4F48DE16C3B2F5005440B0 /* AppDelegate.h */,
 				4B4F48DF16C3B2F5005440B0 /* AppDelegate.m */,
 				4B4F48E716C3B2F5005440B0 /* MainStoryboard.storyboard */,
+				4B99FB0116CBE33C005A13D6 /* ListaColeccionSinHacerTVC.h */,
+				4B99FB0216CBE33C005A13D6 /* ListaColeccionSinHacerTVC.m */,
+				4B99FB0C16CBFD2C005A13D6 /* DetailVC.h */,
+				4B99FB0D16CBFD2C005A13D6 /* DetailVC.m */,
+				4B48172916C5509800D3AF2E /* PracticasTabBarController.h */,
+				4B48172A16C5509800D3AF2E /* PracticasTabBarController.m */,
 				4B4F48EA16C3B2F5005440B0 /* ViewController.h */,
 				4B4F48EB16C3B2F5005440B0 /* ViewController.m */,
+				4B99FAFE16CB9E7C005A13D6 /* alum_carnet.h */,
+				4B99FAFF16CB9E7C005A13D6 /* alum_carnet.m */,
+				4B99FAF716CABFAA005A13D6 /* Alumno.h */,
+				4B99FAF816CABFAA005A13D6 /* Alumno.m */,
+				4BB3FF0916C968AA0060C18A /* Coleccion.h */,
+				4BB3FF0A16C968AA0060C18A /* Coleccion.m */,
+				4B48174216C55F6400D3AF2E /* images */,
 				4B4F48D616C3B2F5005440B0 /* Supporting Files */,
 			);
 			path = PruebaLogin;
@@ -163,6 +220,11 @@
 				4B4F48E416C3B2F5005440B0 /* Default@2x.png in Resources */,
 				4B4F48E616C3B2F5005440B0 /* Default-568h@2x.png in Resources */,
 				4B4F48E916C3B2F5005440B0 /* MainStoryboard.storyboard in Resources */,
+				4B48173416C553E000D3AF2E /* volante.png in Resources */,
+				4B48173816C555FB00D3AF2E /* tick.png in Resources */,
+				4B48174416C563A900D3AF2E /* L.png in Resources */,
+				4B48174616C569E600D3AF2E /* darma.png in Resources */,
+				4BB3FF4816CA6ADB0060C18A /* Logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +238,12 @@
 				4B4F48DC16C3B2F5005440B0 /* main.m in Sources */,
 				4B4F48E016C3B2F5005440B0 /* AppDelegate.m in Sources */,
 				4B4F48EC16C3B2F5005440B0 /* ViewController.m in Sources */,
+				4B48172B16C5509800D3AF2E /* PracticasTabBarController.m in Sources */,
+				4BB3FF0B16C968AA0060C18A /* Coleccion.m in Sources */,
+				4B99FAF916CABFAA005A13D6 /* Alumno.m in Sources */,
+				4B99FB0016CB9E7C005A13D6 /* alum_carnet.m in Sources */,
+				4B99FB0316CBE33C005A13D6 /* ListaColeccionSinHacerTVC.m in Sources */,
+				4B99FB0E16CBFD2C005A13D6 /* DetailVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +360,7 @@
 				4B4F48F116C3B2F5005440B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
