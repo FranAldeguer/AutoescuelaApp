@@ -9,15 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @interface alum_carnet : NSObject{
-    int identificador;
-    int id_alumno;
-    int id_carnet;
-    int terminado;
+    NSString *identificador;
+    NSString *id_alumno;
+    NSString *id_carnet;
+    NSString *terminado;
 }
 
-@property(nonatomic) int identificador;
-@property(nonatomic) int id_alumno;
-@property(nonatomic) int id_carnet;
-@property(nonatomic) int terminado;
+@property(nonatomic, strong) NSString *identificador;
+@property(nonatomic, strong) NSString *id_alumno;
+@property(nonatomic, strong) NSString *id_carnet;
+@property(nonatomic, strong) NSString *terminado;
 
 @end

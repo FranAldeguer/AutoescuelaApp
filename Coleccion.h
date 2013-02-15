@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface Coleccion : NSObject{
-    int identificador;
+    NSString *identificador;
     NSString *nombre;
-    int id_carnet;
+    NSString *id_carnet;
 }
 
-@property (nonatomic) int identificador;
+@property (nonatomic, strong) NSString *identificador;
 @property (nonatomic, strong) NSString *nombre;
-@property (nonatomic) int id_carnet;
+@property (nonatomic, strong) NSString *id_carnet;
 
 @end

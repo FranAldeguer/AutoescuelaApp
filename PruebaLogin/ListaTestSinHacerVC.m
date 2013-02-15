@@ -1,21 +1,20 @@
 //
-//  ListaColeccionSinHacerTVC.m
+//  ListaTestSinHacerVC.m
 //  PruebaLogin
 //
-//  Created by Fran Aldeguer on 13/02/13.
+//  Created by Fran Aldeguer on 14/02/13.
 //  Copyright (c) 2013 FranAldeguer. All rights reserved.
 //
 
-#import "ListaColeccionSinHacerTVC.h"
-#import "DetailVC.h"
 #import "ListaTestSinHacerVC.h"
+#import "RealizarTestVC.h"
 
-@interface ListaColeccionSinHacerTVC ()
+@interface ListaTestSinHacerVC ()
 
 @end
 
-@implementation ListaColeccionSinHacerTVC
-@synthesize colecciones, datos;
+@implementation ListaTestSinHacerVC
+@synthesize id_coleccion, datos, tests;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,11 +27,12 @@
 
 - (void)viewDidLoad
 {
-    self.title = @"Tests sin hacer";
+    self.title = [NSString stringWithFormat:@"ID_COLECCION: %@", id_coleccion];
+    NSLog(@"id_col: %@", id_coleccion);
     
     NSString *docsDir;
     NSArray *dirPath;
-    NSString *id_carnet;
+    NSString *id_alum_carnet;
     
     //Elige el directorio donde se va a crear la base de datos
     dirPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -43,17 +43,17 @@
     sqlite3_stmt *statement;
     if (sqlite3_open(dbPath, &_alumnoDB) == SQLITE_OK)
     {
-        NSString *query = @"SELECT id_carnet FROM ALUMNOS";
+        NSString *query = @"SELECT id_alum_carnet FROM ALUMNOS";
         const char *query_stmt = [query UTF8String];
         if (sqlite3_prepare_v2(_alumnoDB,query_stmt, -1, &statement, NULL) == SQLITE_OK)
         {
             if (sqlite3_step(statement) == SQLITE_ROW)
             {
-                id_carnet = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
-                NSLog(@"id_carnet: %@", id_carnet);
+                id_alum_carnet = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
+                NSLog(@"id_alum_carnet: %@", id_alum_carnet);
             } else {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No hay tests"
-                                                                message:@"No tienes test para hacer"
+                                                                message:@"No tienes test para hacer en esta coleccion"
                                                                delegate:self
                                                       cancelButtonTitle:@"Ok"
                                                       otherButtonTitles:nil, nil];
@@ -64,11 +64,13 @@
         sqlite3_close(_alumnoDB);
     }
     
-    colecciones = [[NSMutableArray alloc] init];
+    tests = [[NSMutableArray alloc] init];
     datos = [[NSDictionary alloc] init];
-
+    
     //NSURL es un objeto de tipo URL que contiene la Url que le pasemos
-    NSString *conectar = [NSString stringWithFormat:@"http://localhost/ProyectoAutoescuela/app_json/ColeccionesIOS.php?carnet=%@", id_carnet];
+    NSString *conectar = [NSString stringWithFormat:
+                          @"http://localhost/ProyectoAutoescuela/app_json/TestSinHacerIOS.php?alumcar=%@&colec=%@",
+                          id_alum_carnet, id_coleccion];
     NSLog(@"%@", conectar);
     NSURL *url = [NSURL URLWithString:conectar];
     //NSData es un objeto que contiene datos, en este caso los datos que le pasamos por el json que cojemos de la url
@@ -78,31 +80,36 @@
     //NSLog es como un 'echo' en php, sirve para imprimir texto por pantalla
     NSLog(@"Ha devuelto %@", serialJson);
     
- //NSLog(@"Apellidos: %@", [alu apellidos]);
     
-   
+    Test *t;
     
-    Coleccion *colec;
     for (int i = 0; i<[serialJson count]; i++)
     {
-        colec = [[Coleccion alloc] init];
-        [colec setIdentificador:[[serialJson objectAtIndex:i] valueForKey:@"id"]];
-        [colec setNombre:[[serialJson objectAtIndex:i] valueForKey:@"nombre"]];
-        [colec setId_carnet:[[serialJson objectAtIndex:i] valueForKey:@"id_carnet"]];
+        t = [[Test alloc] init];
+        [t setIdentificador:[[serialJson objectAtIndex:i] valueForKey:@"id"]];
+        [t setId_coleccion:[[serialJson objectAtIndex:i] valueForKey:@"id_coleccion"]];
+        [t setNum_preguntas:[[serialJson objectAtIndex:i] valueForKey:@"num_preguntas"]];
+        [t setNumero:[[serialJson objectAtIndex:i] valueForKey:@"numero"]];
+
         
-        //int identi = [colec identificador];
-        //NSString *numero = [NSString stringWithFormat:@"%d", [colec identificador]];
-        //NSLog(@"%@", numero);
-        
-        [colecciones addObject:colec];
-        NSLog(@"coleccion: %@", [colec identificador]);
+        [tests addObject:t];
+        NSLog(@"id_test: %@", [t identificador]);
     }
-     [self.tableView reloadData];
-       
     
+    if ([serialJson count] == 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No hay tests"
+                                                        message:@"No tienes test para hacer en esta coleccion"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    [self.tableView reloadData];
     
     
     [super viewDidLoad];
+    
+    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -130,22 +137,25 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [colecciones count];
+    return [tests count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"C_sinhacer";
+    static NSString *CellIdentifier = @"C_TestSH";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     
-    Coleccion *col = [[Coleccion alloc]init];
-    col = [colecciones objectAtIndex:[indexPath row]];
-
-    //NSString *carn = [NSString stringWithFormat:@"%@", [col id_carnet]];
-    cell.textLabel.text = [col nombre];
-    cell.detailTextLabel.text = @"X Sin hacer";
+    Test *t = [[Test alloc] init];
+    t = [tests objectAtIndex:[indexPath row]];
+    
+    NSString *title = [NSString stringWithFormat:@"Test %@", [t numero]];
+    NSString *detail = [NSString stringWithFormat:@"%@ preguntas", [t num_preguntas]];
+    
+    cell.textLabel.text = title;
+    cell.detailTextLabel.text = detail;
+    
     
     return cell;
 }
@@ -153,18 +163,12 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     //Coleccion *colec;
-    if ([segue.identifier isEqualToString:@"testLista"]){
-
-        NSString *ident_colec = [[colecciones objectAtIndex:[[self.tableView indexPathForSelectedRow] row]] identificador];
-        //colec = [colecciones objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
-        //NSLog(@"%@",[colec identificador]);
-        //int iden = [colec id_carnet];
+    if ([segue.identifier isEqualToString:@"realizar"]){
         
-        //NSString *ident = [NSString stringWithFormat:@"%@", [colec identificador]];
+        Test *test_pasar = [tests objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        //NSString *ident_colec = [ identificador];
         
-        //NSLog(@"%@", ident_colec);
-    
-        [segue.destinationViewController setId_coleccion:ident_colec];
+        [segue.destinationViewController setTest_pasado:test_pasar];
     }
 }
 

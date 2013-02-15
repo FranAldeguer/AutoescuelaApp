@@ -38,7 +38,7 @@ alum_carnet *alucar;
         
         if(sqlite3_open(dbpath, &_alumnoDB) == SQLITE_OK){
             char *errMsg;
-            const char *sql_stmt = "CREATE TABLE IF NOT EXISTS ALUMNOS (ID_ALUMNO INTEGER PRIMARY KEY, PASS VARCHAR(32), ID_ALUM_CARNET INTEGER, ID_CARNET INTEGER)";
+            const char *sql_stmt = "CREATE TABLE IF NOT EXISTS ALUMNOS (ID_ALUMNO VARCHAR(11) PRIMARY KEY, PASS VARCHAR(32), ID_ALUM_CARNET VARCHAR(11), ID_CARNET VARCHAR(11))";
             if (sqlite3_exec(_alumnoDB, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
             {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
@@ -85,7 +85,7 @@ alum_carnet *alucar;
 
         //Crea la URL para comprobar si el usuario y la contraseña son correctos
         NSString *conectar = [NSString stringWithFormat:
-                              @"http://localhost/AppAutoescuelasIOS/LoginAlumnoIOS.php?userDNI=%@&userPASS=%@",
+                              @"http://localhost/ProyectoAutoescuela/app_json/LoginAlumnoIOS.php?userDNI=%@&userPASS=%@",
                               self.dni.text, self.pass.text];
         NSURL *url = [NSURL URLWithString:conectar];
         
@@ -111,17 +111,19 @@ alum_carnet *alucar;
             //Recoge el alumno logueado y lo guarda en un objeto ALUMNO
             alu = [[Alumno alloc]init];
             //Rellena las variables del objeto con los datos obtenidos del JSON
-            [alu setIdentificador:(int) [[json objectAtIndex:0] valueForKey:@"id"]];
+            [alu setIdentificador:[[json objectAtIndex:0] valueForKey:@"id"]];
             [alu setDni:[[json objectAtIndex:0] valueForKey:@"dni"]];
             [alu setNombre:[[json objectAtIndex:0] valueForKey:@"nombre"]];
             [alu setApellidos:[[json objectAtIndex:0] valueForKey:@"apellidos"]];
-            [alu setTelefono:(int)[[json objectAtIndex:0] valueForKey:@"telefono"]];
+            [alu setTelefono:[[json objectAtIndex:0] valueForKey:@"telefono"]];
             [alu setMail:[[json objectAtIndex:0] valueForKey:@"mail"]];
             [alu setPass:[[json objectAtIndex:0] valueForKey:@"pass"]];
-            [alu setId_profesor:(int)[[json objectAtIndex:0] valueForKey:@"id_profesor"]];
+            [alu setId_profesor:[[json objectAtIndex:0] valueForKey:@"id_profesor"]];
             
             //Recoge el carnet que se está sacando actualmente el alumno
-            conectar = [NSString stringWithFormat:@"http://localhost/AppAutoescuelasIOS/AlumCarnetIOS.php?alumno=%@", [alu identificador]];
+            conectar = [NSString stringWithFormat:
+                        @"http://localhost/ProyectoAutoescuela/app_json/AlumCarnetIOS.php?alumno=%@",
+                        [alu identificador]];
             url = [NSURL URLWithString:conectar];
             DatosJson = [NSData dataWithContentsOfURL:url];
             json = [NSJSONSerialization JSONObjectWithData:DatosJson options:0 error:nil];
@@ -141,10 +143,10 @@ alum_carnet *alucar;
             //Y si se lo está sacando lo mete en un objeto de tipo alum_carnet
                 alucar = [[alum_carnet alloc] init];
             
-                [alucar setIdentificador:(int)[[json objectAtIndex:0] valueForKey:@"id"]];
-                [alucar setId_alumno:(int)[[json objectAtIndex:0] valueForKey:@"id_alumno"]];
-                [alucar setId_carnet:(int)[[json objectAtIndex:0] valueForKey:@"id_carnet"]];
-                [alucar setTerminado:(int)[[json objectAtIndex:0] valueForKey:@"terminado"]];
+                [alucar setIdentificador:[[json objectAtIndex:0] valueForKey:@"id"]];
+                [alucar setId_alumno:[[json objectAtIndex:0] valueForKey:@"id_alumno"]];
+                [alucar setId_carnet:[[json objectAtIndex:0] valueForKey:@"id_carnet"]];
+                [alucar setTerminado:[[json objectAtIndex:0] valueForKey:@"terminado"]];
                 
                 NSLog(@"id_alucar: %@", [alucar identificador]);
                 insertSQL = [NSString stringWithFormat:
