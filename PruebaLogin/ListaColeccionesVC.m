@@ -1,20 +1,20 @@
 //
-//  ListaColeccionSinHacerTVC.m
+//  ListaColeccionesVC.m
 //  PruebaLogin
 //
-//  Created by Fran Aldeguer on 13/02/13.
+//  Created by Fran Aldeguer on 17/02/13.
 //  Copyright (c) 2013 FranAldeguer. All rights reserved.
 //
 
-#import "ListaColeccionSinHacerTVC.h"
+#import "ListaColeccionesVC.h"
 #import "DetailVC.h"
-#import "ListaTestSinHacerVC.h"
+#import "ListaTestVC.h"
 
-@interface ListaColeccionSinHacerTVC ()
+@interface ListaColeccionesVC ()
 
 @end
 
-@implementation ListaColeccionSinHacerTVC
+@implementation ListaColeccionesVC
 @synthesize colecciones, datos;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -66,7 +66,7 @@
     
     colecciones = [[NSMutableArray alloc] init];
     datos = [[NSDictionary alloc] init];
-
+    
     //NSURL es un objeto de tipo URL que contiene la Url que le pasemos
     NSString *conectar = [NSString stringWithFormat:@"http://localhost/ProyectoAutoescuela/app_json/ColeccionesIOS.php?carnet=%@", id_carnet];
     NSLog(@"%@", conectar);
@@ -78,9 +78,9 @@
     //NSLog es como un 'echo' en php, sirve para imprimir texto por pantalla
     NSLog(@"Ha devuelto %@", serialJson);
     
- //NSLog(@"Apellidos: %@", [alu apellidos]);
+    //NSLog(@"Apellidos: %@", [alu apellidos]);
     
-   
+    
     
     Coleccion *colec;
     for (int i = 0; i<[serialJson count]; i++)
@@ -97,11 +97,7 @@
         [colecciones addObject:colec];
         NSLog(@"coleccion: %@", [colec identificador]);
     }
-     [self.tableView reloadData];
-       
-    
-    
-    
+    [self.tableView reloadData];
     [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -121,38 +117,33 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [colecciones count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"C_sinhacer";
+    static NSString *CellIdentifier = @"C_coleccion";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    
     Coleccion *col = [[Coleccion alloc]init];
     col = [colecciones objectAtIndex:[indexPath row]];
-
-    //NSString *carn = [NSString stringWithFormat:@"%@", [col id_carnet]];
+    
     cell.textLabel.text = [col nombre];
-    cell.detailTextLabel.text = @"X Sin hacer";
     
     return cell;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-    if ([segue.identifier isEqualToString:@"testLista"]){
+    if ([segue.identifier isEqualToString:@"testLista2"]){
         NSString *ident_colec = [[colecciones objectAtIndex:[[self.tableView indexPathForSelectedRow] row]] identificador];
         [segue.destinationViewController setId_coleccion:ident_colec];
     }

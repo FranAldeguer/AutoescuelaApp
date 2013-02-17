@@ -180,6 +180,7 @@ alum_carnet *alucar;
                                                   otherButtonTitles:nil, nil];
             [alert show];
             
+            
             Coleccion *vc =(Coleccion *)[self.storyboard instantiateViewControllerWithIdentifier:@"MenuPrincipal"];
             [self presentModalViewController:vc animated:YES];
         }

@@ -9,6 +9,6 @@
 #import "Test.h"
 
 @implementation Test
-@synthesize identificador, numero, id_coleccion, num_preguntas;
+@synthesize identificador, numero, id_coleccion, num_preguntas, fallos;
 
 @end

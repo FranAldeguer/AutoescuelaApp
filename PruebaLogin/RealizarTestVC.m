@@ -32,6 +32,15 @@
     self.num.text = [test_pasado numero];
     self.colec.text= [test_pasado id_coleccion];
     self.num_pre.text = [test_pasado num_preguntas];
+    
+    
+    /*backButton = [[UIBarButtonItem alloc]
+                  initWithTitle:@"Back" style:UIBarButtonItemStyleBordered
+                  target:nil action:];
+    
+    [self.navigationItem setBackBarButtonItem:backButton];
+    */
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -114,6 +123,7 @@
                                                   cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil, nil];
             [alert show];
+            //[self.view removeFromSuperview];
             //Test *vc =(Test *)[self.storyboard instantiateViewControllerWithIdentifier:@"TestSinHacer"];
             //[self presentModalViewController:vc animated:YES];
         }else{

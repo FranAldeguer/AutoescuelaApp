@@ -19,5 +19,6 @@
 @property (nonatomic, strong) NSString *numero;
 @property (nonatomic, strong) NSString *id_coleccion;
 @property (nonatomic, strong) NSString *num_preguntas;
+@property (nonatomic, strong) NSString *fallos;
 
 @end
