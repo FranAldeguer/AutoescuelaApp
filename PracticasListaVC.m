@@ -1,20 +1,20 @@
 //
-//  TestMasFallosVC.m
+//  PracticasListaVC.m
 //  PruebaLogin
 //
-//  Created by Fran Aldeguer on 15/02/13.
+//  Created by Fran Aldeguer on 17/02/13.
 //  Copyright (c) 2013 FranAldeguer. All rights reserved.
 //
 
-#import "TestMasFallosVC.h"
-#import "RealizarTestVC.h"
+#import "PracticasListaVC.h"
+#import "PracticaVerVC.h"
 
-@interface TestMasFallosVC ()
+@interface PracticasListaVC ()
 
 @end
 
-@implementation TestMasFallosVC
-@synthesize tests, datos;
+@implementation PracticasListaVC
+@synthesize datos, practicas;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -61,12 +61,12 @@
         sqlite3_close(_alumnoDB);
     }
     
-    tests = [[NSMutableArray alloc] init];
+    practicas = [[NSMutableArray alloc] init];
     datos = [[NSDictionary alloc] init];
     
     //NSURL es un objeto de tipo URL que contiene la Url que le pasemos
     NSString *conectar = [NSString stringWithFormat:
-                          @"http://192.168.0.146/ProyectoAutoescuela/app_json/TestFallos.php?alumcar=%@",
+                          @"http://192.168.0.146/ProyectoAutoescuela/app_json/PracticasIOS.php?alumcar=%@",
                           id_alum_carnet];
     NSLog(@"%@", conectar);
     NSURL *url = [NSURL URLWithString:conectar];
@@ -77,21 +77,20 @@
     //NSLog es como un 'echo' en php, sirve para imprimir texto por pantalla
     NSLog(@"Ha devuelto %@", serialJson);
     
-    
-    Test *t;
+    Practica *p;
     
     for (int i = 0; i<[serialJson count]; i++)
     {
-        t = [[Test alloc] init];
-        [t setIdentificador:[[serialJson objectAtIndex:i] valueForKey:@"id"]];
-        [t setId_coleccion:[[serialJson objectAtIndex:i] valueForKey:@"id_coleccion"]];
-        [t setNum_preguntas:[[serialJson objectAtIndex:i] valueForKey:@"num_preguntas"]];
-        [t setNumero:[[serialJson objectAtIndex:i] valueForKey:@"numero"]];
-        [t setFallos:[[serialJson objectAtIndex:i] valueForKey:@"fallos"]];
+        p = [[Practica alloc] init];
+        [p setIdentificador:[[serialJson objectAtIndex:i] valueForKey:@"id"]];
+        [p setId_alum_carnet:[[serialJson objectAtIndex:i] valueForKey:@"id_alum_carnet"]];
+        [p setFecha:[[serialJson objectAtIndex:i] valueForKey:@"fecha"]];
+        [p setHora:[[serialJson objectAtIndex:i] valueForKey:@"hora"]];
+        [p setTiempo:[[serialJson objectAtIndex:i] valueForKey:@"tiempo"]];
         
         
-        [tests addObject:t];
-        NSLog(@"id_test: %@", [t identificador]);
+        [practicas addObject:p];
+        NSLog(@"tiempo: %@", [p identificador]);
     }
     
     if ([serialJson count] == 0) {
@@ -103,7 +102,7 @@
         [alert show];
     }
     [self.tableView reloadData];
-
+    
     [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -123,34 +122,33 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [tests count];
+    return [practicas count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"C_test_fallos";
+    static NSString *CellIdentifier = @"C_practica";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
     // Configure the cell...
     
-    Test *t = [[Test alloc] init];
-    t = [tests objectAtIndex:[indexPath row]];
+    Practica *pr = [[Practica alloc] init];
+    pr = [practicas objectAtIndex:[indexPath row]];
     
-    UILabel *test = (UILabel *) [cell viewWithTag:20];
-    UILabel *coleccion = (UILabel *) [cell viewWithTag:21];
-    UILabel *fallos = (UILabel *) [cell viewWithTag:22];
+    UILabel *fecha = (UILabel *) [cell viewWithTag:20];
+    UILabel *hora = (UILabel *) [cell viewWithTag:21];
+    UILabel *tiempo = (UILabel *) [cell viewWithTag:22];
     
-    test.text = [NSString stringWithFormat:@"Test %@", [t numero]];
-    coleccion.text = [NSString stringWithFormat:@"Coleccion %@", [t id_coleccion]];
-    fallos.text = [NSString stringWithFormat:@"%@ fallos", [t fallos]];
+    fecha.text = [NSString stringWithFormat:@"Fecha: %@", [pr fecha]];
+    hora.text = [NSString stringWithFormat:@"Hora: %@", [pr hora]];
+    tiempo.text = [NSString stringWithFormat:@"%@", [pr tiempo]];
     
     return cell;
 }
@@ -158,15 +156,15 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     //Coleccion *colec;
-    if ([segue.identifier isEqualToString:@"realizar2"]){
+    if ([segue.identifier isEqualToString:@"detailPractica"]){
         
-        Test *test_pasar = [tests objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        Practica *practicaPasar = [practicas objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
         //NSString *ident_colec = [ identificador];
         
-        [segue.destinationViewController setTest_pasado:test_pasar];
+        [segue.destinationViewController setPracticaPasada:practicaPasar];
+        NSLog(@"%@", [practicaPasar identificador]);
     }
 }
-
 
 /*
 // Override to support conditional editing of the table view.

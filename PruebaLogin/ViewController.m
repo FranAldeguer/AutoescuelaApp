@@ -19,6 +19,8 @@ Alumno *alu;
 alum_carnet *alucar;
 - (void)viewDidLoad
 {
+    self.dni.text = nil;
+    self.pass.text = nil;
     [super viewDidLoad];
     NSString *docsDir;
     NSArray *dirPath;
@@ -85,7 +87,7 @@ alum_carnet *alucar;
 
         //Crea la URL para comprobar si el usuario y la contraseña son correctos
         NSString *conectar = [NSString stringWithFormat:
-                              @"http://localhost/ProyectoAutoescuela/app_json/LoginAlumnoIOS.php?userDNI=%@&userPASS=%@",
+                              @"http://192.168.0.146/ProyectoAutoescuela/app_json/LoginAlumnoIOS.php?userDNI=%@&userPASS=%@",
                               self.dni.text, self.pass.text];
         NSURL *url = [NSURL URLWithString:conectar];
         
@@ -122,7 +124,7 @@ alum_carnet *alucar;
             
             //Recoge el carnet que se está sacando actualmente el alumno
             conectar = [NSString stringWithFormat:
-                        @"http://localhost/ProyectoAutoescuela/app_json/AlumCarnetIOS.php?alumno=%@",
+                        @"http://192.168.0.146/ProyectoAutoescuela/app_json/AlumCarnetIOS.php?alumno=%@",
                         [alu identificador]];
             url = [NSURL URLWithString:conectar];
             DatosJson = [NSData dataWithContentsOfURL:url];

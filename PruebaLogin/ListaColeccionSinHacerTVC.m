@@ -68,7 +68,7 @@
     datos = [[NSDictionary alloc] init];
 
     //NSURL es un objeto de tipo URL que contiene la Url que le pasemos
-    NSString *conectar = [NSString stringWithFormat:@"http://localhost/ProyectoAutoescuela/app_json/ColeccionesIOS.php?carnet=%@", id_carnet];
+    NSString *conectar = [NSString stringWithFormat:@"http://192.168.0.146/ProyectoAutoescuela/app_json/ColeccionesIOS.php?carnet=%@", id_carnet];
     NSLog(@"%@", conectar);
     NSURL *url = [NSURL URLWithString:conectar];
     //NSData es un objeto que contiene datos, en este caso los datos que le pasamos por el json que cojemos de la url

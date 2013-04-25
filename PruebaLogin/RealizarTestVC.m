@@ -102,7 +102,7 @@
         
         //NSURL es un objeto de tipo URL que contiene la Url que le pasemos
         NSString *conectar = [NSString stringWithFormat:
-                              @"http://localhost/ProyectoAutoescuela/app_json/HacerTestIOS.php?alumcar=%@&test=%@&fallos=%@",
+                              @"http://192.168.0.146/ProyectoAutoescuela/app_json/HacerTestIOS.php?alumcar=%@&test=%@&fallos=%@",
                               id_alum_carnet, [test_pasado identificador], fallos];
         NSLog(@"%@", conectar);
         NSURL *url = [NSURL URLWithString:conectar];
@@ -124,8 +124,8 @@
                                                   otherButtonTitles:nil, nil];
             [alert show];
             //[self.view removeFromSuperview];
-            //Test *vc =(Test *)[self.storyboard instantiateViewControllerWithIdentifier:@"TestSinHacer"];
-            //[self presentModalViewController:vc animated:YES];
+            Test *vc =(Test *)[self.storyboard instantiateViewControllerWithIdentifier:@"MenuPrincipal"];
+            [self presentModalViewController:vc animated:YES];
         }else{
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                             message:@"Ha habido un error"

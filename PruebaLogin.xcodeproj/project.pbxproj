@@ -33,9 +33,19 @@
 		4B99FB1716CD46E4005A13D6 /* RealizarTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B99FB1616CD46E3005A13D6 /* RealizarTestVC.m */; };
 		4BB3FF0B16C968AA0060C18A /* Coleccion.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB3FF0A16C968AA0060C18A /* Coleccion.m */; };
 		4BB3FF4816CA6ADB0060C18A /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB3FF4716CA6ADB0060C18A /* Logo.png */; };
+		4BB7C5A616D44FDD00037DA5 /* EstadisticasVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7C5A516D44FDD00037DA5 /* EstadisticasVC.m */; };
 		4BEBBA0D16CEAD82007E8BF2 /* TestMasFallosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBBA0C16CEAD82007E8BF2 /* TestMasFallosVC.m */; };
 		4BEBBA1616D1022A007E8BF2 /* ListaColeccionesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBBA1516D1022A007E8BF2 /* ListaColeccionesVC.m */; };
 		4BEBBA1916D107D9007E8BF2 /* LIstaTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBBA1816D107D9007E8BF2 /* LIstaTestVC.m */; };
+		4BEBBA1D16D16CA0007E8BF2 /* PracticasListaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBBA1C16D16CA0007E8BF2 /* PracticasListaVC.m */; };
+		4BEBBA2016D16CC3007E8BF2 /* Practica.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBBA1F16D16CC2007E8BF2 /* Practica.m */; };
+		4BEBBA2316D18188007E8BF2 /* PracticaVerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBBA2216D18188007E8BF2 /* PracticaVerVC.m */; };
+		4BEBBA2716D1AA4C007E8BF2 /* Autoescuela.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBBA2616D1AA4C007E8BF2 /* Autoescuela.m */; };
+		4BEBBA2A16D1ADA3007E8BF2 /* DatosAutoescuelaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBBA2916D1ADA3007E8BF2 /* DatosAutoescuelaVC.m */; };
+		4BEBBA2D16D1BF45007E8BF2 /* Profesor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBBA2C16D1BF45007E8BF2 /* Profesor.m */; };
+		4BEBBA3316D1C59F007E8BF2 /* DatosProfesorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBBA3216D1C59E007E8BF2 /* DatosProfesorVC.m */; };
+		4BEBBA3516D1D083007E8BF2 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BEBBA3416D1D083007E8BF2 /* cross.png */; };
+		4BEBBA3816D257D9007E8BF2 /* SesionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBBA3716D257D8007E8BF2 /* SesionVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,12 +89,31 @@
 		4BB3FF0916C968AA0060C18A /* Coleccion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coleccion.h; path = ../Coleccion.h; sourceTree = "<group>"; };
 		4BB3FF0A16C968AA0060C18A /* Coleccion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Coleccion.m; path = ../Coleccion.m; sourceTree = "<group>"; };
 		4BB3FF4716CA6ADB0060C18A /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		4BB7C5A416D44FDD00037DA5 /* EstadisticasVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstadisticasVC.h; sourceTree = "<group>"; };
+		4BB7C5A516D44FDD00037DA5 /* EstadisticasVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EstadisticasVC.m; sourceTree = "<group>"; };
 		4BEBBA0B16CEAD81007E8BF2 /* TestMasFallosVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMasFallosVC.h; sourceTree = "<group>"; };
 		4BEBBA0C16CEAD82007E8BF2 /* TestMasFallosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMasFallosVC.m; sourceTree = "<group>"; };
 		4BEBBA1416D1022A007E8BF2 /* ListaColeccionesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaColeccionesVC.h; sourceTree = "<group>"; };
 		4BEBBA1516D1022A007E8BF2 /* ListaColeccionesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaColeccionesVC.m; sourceTree = "<group>"; };
 		4BEBBA1716D107D8007E8BF2 /* LIstaTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIstaTestVC.h; sourceTree = "<group>"; };
 		4BEBBA1816D107D9007E8BF2 /* LIstaTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIstaTestVC.m; sourceTree = "<group>"; };
+		4BEBBA1B16D16C9F007E8BF2 /* PracticasListaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PracticasListaVC.h; path = ../PracticasListaVC.h; sourceTree = "<group>"; };
+		4BEBBA1C16D16CA0007E8BF2 /* PracticasListaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PracticasListaVC.m; path = ../PracticasListaVC.m; sourceTree = "<group>"; };
+		4BEBBA1E16D16CC2007E8BF2 /* Practica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Practica.h; path = ../Practica.h; sourceTree = "<group>"; };
+		4BEBBA1F16D16CC2007E8BF2 /* Practica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Practica.m; path = ../Practica.m; sourceTree = "<group>"; };
+		4BEBBA2116D18187007E8BF2 /* PracticaVerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticaVerVC.h; sourceTree = "<group>"; };
+		4BEBBA2216D18188007E8BF2 /* PracticaVerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticaVerVC.m; sourceTree = "<group>"; };
+		4BEBBA2516D1AA4B007E8BF2 /* Autoescuela.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Autoescuela.h; sourceTree = "<group>"; };
+		4BEBBA2616D1AA4C007E8BF2 /* Autoescuela.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Autoescuela.m; sourceTree = "<group>"; };
+		4BEBBA2816D1ADA2007E8BF2 /* DatosAutoescuelaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatosAutoescuelaVC.h; sourceTree = "<group>"; };
+		4BEBBA2916D1ADA3007E8BF2 /* DatosAutoescuelaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatosAutoescuelaVC.m; sourceTree = "<group>"; };
+		4BEBBA2B16D1BF44007E8BF2 /* Profesor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profesor.h; sourceTree = "<group>"; };
+		4BEBBA2C16D1BF45007E8BF2 /* Profesor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profesor.m; sourceTree = "<group>"; };
+		4BEBBA3116D1C59E007E8BF2 /* DatosProfesorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatosProfesorVC.h; path = ../DatosProfesorVC.h; sourceTree = "<group>"; };
+		4BEBBA3216D1C59E007E8BF2 /* DatosProfesorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatosProfesorVC.m; path = ../DatosProfesorVC.m; sourceTree = "<group>"; };
+		4BEBBA3416D1D083007E8BF2 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
+		4BEBBA3616D257D7007E8BF2 /* SesionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SesionVC.h; sourceTree = "<group>"; };
+		4BEBBA3716D257D8007E8BF2 /* SesionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SesionVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +134,7 @@
 		4B48174216C55F6400D3AF2E /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4BEBBA3416D1D083007E8BF2 /* cross.png */,
 				4BB3FF4716CA6ADB0060C18A /* Logo.png */,
 				4B48174316C563A900D3AF2E /* L.png */,
 				4B48174516C569E600D3AF2E /* darma.png */,
@@ -148,25 +178,19 @@
 				4B4F48DE16C3B2F5005440B0 /* AppDelegate.h */,
 				4B4F48DF16C3B2F5005440B0 /* AppDelegate.m */,
 				4B4F48E716C3B2F5005440B0 /* MainStoryboard.storyboard */,
-				4B99FB1216CD14B9005A13D6 /* ListaTestSinHacerVC.h */,
-				4B99FB1316CD14B9005A13D6 /* ListaTestSinHacerVC.m */,
-				4BEBBA1716D107D8007E8BF2 /* LIstaTestVC.h */,
-				4BEBBA1816D107D9007E8BF2 /* LIstaTestVC.m */,
-				4BEBBA1416D1022A007E8BF2 /* ListaColeccionesVC.h */,
-				4BEBBA1516D1022A007E8BF2 /* ListaColeccionesVC.m */,
-				4B99FB0116CBE33C005A13D6 /* ListaColeccionSinHacerTVC.h */,
-				4B99FB0216CBE33C005A13D6 /* ListaColeccionSinHacerTVC.m */,
-				4BEBBA0B16CEAD81007E8BF2 /* TestMasFallosVC.h */,
-				4BEBBA0C16CEAD82007E8BF2 /* TestMasFallosVC.m */,
-				4B99FB1516CD46E3005A13D6 /* RealizarTestVC.h */,
-				4B99FB1616CD46E3005A13D6 /* RealizarTestVC.m */,
-				4B99FB0C16CBFD2C005A13D6 /* DetailVC.h */,
-				4B99FB0D16CBFD2C005A13D6 /* DetailVC.m */,
-				4B48172916C5509800D3AF2E /* PracticasTabBarController.h */,
-				4B48172A16C5509800D3AF2E /* PracticasTabBarController.m */,
+				4BB7C5A416D44FDD00037DA5 /* EstadisticasVC.h */,
+				4BB7C5A516D44FDD00037DA5 /* EstadisticasVC.m */,
+				4BEBBA3616D257D7007E8BF2 /* SesionVC.h */,
+				4BEBBA3716D257D8007E8BF2 /* SesionVC.m */,
+				4BEBBA3116D1C59E007E8BF2 /* DatosProfesorVC.h */,
+				4BEBBA3216D1C59E007E8BF2 /* DatosProfesorVC.m */,
+				4BEBBA2816D1ADA2007E8BF2 /* DatosAutoescuelaVC.h */,
+				4BEBBA2916D1ADA3007E8BF2 /* DatosAutoescuelaVC.m */,
 				4B4F48EA16C3B2F5005440B0 /* ViewController.h */,
 				4B4F48EB16C3B2F5005440B0 /* ViewController.m */,
+				4BEBBA2416D19C97007E8BF2 /* Practicas */,
 				4BEBBA1316D101B3007E8BF2 /* Clases */,
+				4BEBBA1A16D1149F007E8BF2 /* Tests */,
 				4B48174216C55F6400D3AF2E /* images */,
 				4B4F48D616C3B2F5005440B0 /* Supporting Files */,
 			);
@@ -194,12 +218,52 @@
 				4B99FAFF16CB9E7C005A13D6 /* alum_carnet.m */,
 				4B99FAF716CABFAA005A13D6 /* Alumno.h */,
 				4B99FAF816CABFAA005A13D6 /* Alumno.m */,
+				4BEBBA2516D1AA4B007E8BF2 /* Autoescuela.h */,
+				4BEBBA2616D1AA4C007E8BF2 /* Autoescuela.m */,
 				4BB3FF0916C968AA0060C18A /* Coleccion.h */,
 				4BB3FF0A16C968AA0060C18A /* Coleccion.m */,
+				4BEBBA1E16D16CC2007E8BF2 /* Practica.h */,
+				4BEBBA1F16D16CC2007E8BF2 /* Practica.m */,
+				4BEBBA2B16D1BF44007E8BF2 /* Profesor.h */,
+				4BEBBA2C16D1BF45007E8BF2 /* Profesor.m */,
 				4B99FB0F16CD1228005A13D6 /* Test.h */,
 				4B99FB1016CD1229005A13D6 /* Test.m */,
 			);
 			name = Clases;
+			sourceTree = "<group>";
+		};
+		4BEBBA1A16D1149F007E8BF2 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4B99FB1216CD14B9005A13D6 /* ListaTestSinHacerVC.h */,
+				4B99FB1316CD14B9005A13D6 /* ListaTestSinHacerVC.m */,
+				4BEBBA1716D107D8007E8BF2 /* LIstaTestVC.h */,
+				4BEBBA1816D107D9007E8BF2 /* LIstaTestVC.m */,
+				4BEBBA1416D1022A007E8BF2 /* ListaColeccionesVC.h */,
+				4BEBBA1516D1022A007E8BF2 /* ListaColeccionesVC.m */,
+				4B99FB0116CBE33C005A13D6 /* ListaColeccionSinHacerTVC.h */,
+				4B99FB0216CBE33C005A13D6 /* ListaColeccionSinHacerTVC.m */,
+				4BEBBA0B16CEAD81007E8BF2 /* TestMasFallosVC.h */,
+				4BEBBA0C16CEAD82007E8BF2 /* TestMasFallosVC.m */,
+				4B99FB1516CD46E3005A13D6 /* RealizarTestVC.h */,
+				4B99FB1616CD46E3005A13D6 /* RealizarTestVC.m */,
+				4B99FB0C16CBFD2C005A13D6 /* DetailVC.h */,
+				4B99FB0D16CBFD2C005A13D6 /* DetailVC.m */,
+				4B48172916C5509800D3AF2E /* PracticasTabBarController.h */,
+				4B48172A16C5509800D3AF2E /* PracticasTabBarController.m */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		4BEBBA2416D19C97007E8BF2 /* Practicas */ = {
+			isa = PBXGroup;
+			children = (
+				4BEBBA2116D18187007E8BF2 /* PracticaVerVC.h */,
+				4BEBBA2216D18188007E8BF2 /* PracticaVerVC.m */,
+				4BEBBA1B16D16C9F007E8BF2 /* PracticasListaVC.h */,
+				4BEBBA1C16D16CA0007E8BF2 /* PracticasListaVC.m */,
+			);
+			name = Practicas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +327,7 @@
 				4B48174416C563A900D3AF2E /* L.png in Resources */,
 				4B48174616C569E600D3AF2E /* darma.png in Resources */,
 				4BB3FF4816CA6ADB0060C18A /* Logo.png in Resources */,
+				4BEBBA3516D1D083007E8BF2 /* cross.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +353,15 @@
 				4BEBBA0D16CEAD82007E8BF2 /* TestMasFallosVC.m in Sources */,
 				4BEBBA1616D1022A007E8BF2 /* ListaColeccionesVC.m in Sources */,
 				4BEBBA1916D107D9007E8BF2 /* LIstaTestVC.m in Sources */,
+				4BEBBA1D16D16CA0007E8BF2 /* PracticasListaVC.m in Sources */,
+				4BEBBA2016D16CC3007E8BF2 /* Practica.m in Sources */,
+				4BEBBA2316D18188007E8BF2 /* PracticaVerVC.m in Sources */,
+				4BEBBA2716D1AA4C007E8BF2 /* Autoescuela.m in Sources */,
+				4BEBBA2A16D1ADA3007E8BF2 /* DatosAutoescuelaVC.m in Sources */,
+				4BEBBA2D16D1BF45007E8BF2 /* Profesor.m in Sources */,
+				4BEBBA3316D1C59F007E8BF2 /* DatosProfesorVC.m in Sources */,
+				4BEBBA3816D257D9007E8BF2 /* SesionVC.m in Sources */,
+				4BB7C5A616D44FDD00037DA5 /* EstadisticasVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +443,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PruebaLogin/PruebaLogin-Prefix.pch";
 				INFOPLIST_FILE = "PruebaLogin/PruebaLogin-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -380,6 +455,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PruebaLogin/PruebaLogin-Prefix.pch";
 				INFOPLIST_FILE = "PruebaLogin/PruebaLogin-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -69,7 +69,7 @@
     
     //NSURL es un objeto de tipo URL que contiene la Url que le pasemos
     NSString *conectar = [NSString stringWithFormat:
-                          @"http://localhost/ProyectoAutoescuela/app_json/TestIOS.php?colec=%@",
+                          @"http://192.168.0.146/ProyectoAutoescuela/app_json/TestIOS.php?colec=%@",
                           id_coleccion];
     NSLog(@"%@", conectar);
     NSURL *url = [NSURL URLWithString:conectar];
